@@ -23,14 +23,11 @@
         }
         .hidden-card { display: none !important; }
         
-        /* Smooth fade-in animation for new cards */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .animate-card-in {
-            animation: fadeIn 0.4s ease-out forwards;
-        }
+        .animate-card-in { animation: fadeIn 0.4s ease-out forwards; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen flex flex-col tail-container text-slate-900">
@@ -50,7 +47,7 @@
                     <div class="flex items-center space-x-6 xl:space-x-8 h-full pointer-events-auto">
                         <a href="index.html" class="text-slate-600 hover:text-slate-900 font-semibold text-base h-full flex items-center border-b-2 border-transparent hover:border-slate-200 transition">Home</a>
                         <a href="opportunities.html" class="text-emerald-600 font-bold text-base h-full flex items-center border-b-2 border-emerald-600">Opportunities</a>
-                       <a href="timeline.html" class="text-slate-600 hover:text-slate-900 font-semibold text-base h-full flex items-center border-b-2 border-transparent hover:border-slate-200 transition">Timeline</a>
+                        <a href="timeline.html" class="text-slate-600 hover:text-slate-900 font-semibold text-base h-full flex items-center border-b-2 border-transparent hover:border-slate-200 transition">Timeline</a>
                         <a href="resources.html" class="text-slate-600 hover:text-slate-900 font-semibold text-base h-full flex items-center border-b-2 border-transparent hover:border-slate-200 transition">Resources</a>
                         <a href="guides.html" class="text-slate-600 hover:text-slate-900 font-semibold text-base h-full flex items-center border-b-2 border-transparent hover:border-slate-200 transition">Guides</a>
                         <a href="suggest.html" class="text-slate-600 hover:text-slate-900 font-semibold text-base h-full flex items-center border-b-2 border-transparent hover:border-slate-200 transition">Suggest</a>
@@ -64,19 +61,17 @@
                         <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
                     </button>
                 </div>
-                
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-inner">
             <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Home</a>
             <a href="opportunities.html" class="block px-4 py-3 rounded-xl text-base font-bold bg-emerald-50 text-emerald-700">Opportunities</a>
-          <a href="timeline.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Timeline</a>
+            <a href="timeline.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Timeline</a>
             <a href="resources.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Resources</a>
             <a href="guides.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Guides</a>
             <a href="suggest.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Suggest</a>
             <a href="about.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">About</a>
-            <a href="contact.html" class="block px-4 py-3 rounded-xl text-base font-bold bg-slate-100 text-slate-900 mt-2 text-center">Contact Hub</a>
         </div>
     </nav>
 
@@ -85,10 +80,10 @@
         <div class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div class="max-w-2xl text-center md:text-left mx-auto md:mx-0">
                 <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter mb-3">Live Opportunities</h1>
-                <p class="text-slate-600 text-lg md:text-xl font-medium leading-relaxed">Discover elite apprenticeships, scholarships, and bursaries curated for ambitious students in Wales.</p>
+                <p class="text-slate-600 text-lg md:text-xl font-medium leading-relaxed">Discover elite apprenticeships, scholarships, and exams curated for ambitious students in Wales.</p>
             </div>
-            <a href="suggest.html" class="shrink-0 bg-emerald-600 text-white px-7 py-3.5 rounded-2xl text-base font-bold flex items-center gap-2.5 hover:bg-emerald-700 transition shadow-lg shadow-emerald-600/10 mx-auto md:mx-0">
-                <i class="fa-solid fa-lightbulb text-emerald-300"></i> Suggest an Opportunity
+            <a href="timeline.html" class="shrink-0 bg-slate-900 text-white px-7 py-3.5 rounded-2xl text-base font-bold flex items-center gap-2.5 hover:bg-slate-800 transition shadow-lg mx-auto md:mx-0">
+                <i class="fa-regular fa-calendar-check text-emerald-400"></i> View My Timeline
             </a>
         </div>
 
@@ -99,9 +94,9 @@
                     <input type="text" id="search-input" placeholder="Search by role, company, location, or keyword..." class="w-full pl-12 pr-5 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm md:text-base bg-slate-50 font-semibold placeholder-slate-400 transition">
                 </div>
                 <div>
-                    <select id="category-filter" class="w-full px-5 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm md:text-base bg-slate-50 font-semibold transition text-slate-700 cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23475569%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_1rem_center] bg-no-repeat">
+                    <select id="category-filter" class="w-full px-5 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm md:text-base bg-slate-50 font-semibold transition text-slate-700 cursor-pointer appearance-none">
                         <option value="All">All Classifications</option>
-                        </select>
+                    </select>
                 </div>
             </div>
         </div>
@@ -109,15 +104,10 @@
         <div id="loading-state" class="flex flex-col items-center justify-center py-24 text-center">
             <div class="loader mb-5"></div>
             <p class="text-slate-900 font-bold text-lg">Syncing with Live Database...</p>
-            <p class="text-slate-500 mt-1">Fetching the latest STEM opportunities across Wales.</p>
         </div>
 
         <div id="error-state" class="hidden text-center py-24 px-6 bg-white rounded-3xl border border-red-100 shadow-sm">
-            <div class="w-16 h-16 bg-red-100 text-red-700 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 border-4 border-red-50">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
             <p class="text-slate-950 font-black text-xl mb-2 tracking-tight">Database Connection Failed</p>
-            <p class="text-slate-600 max-w-md mx-auto leading-relaxed">We couldn't connect to the opportunities spreadsheet. Please check your network connection or the Google Sheet link in the code.</p>
         </div>
 
         <div id="opportunities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
@@ -126,8 +116,33 @@
     </main>
 
     <script>
-        // Your existing live Google Sheet link
         const sheetCSVUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQSyvn7qSCsr734NAvG_1QTR1rP6Cb_WwJfE5UW1hXAEhG99a8LHygnKwAYaL2Q0EiOeUkGpdbZKWKN/pub?output=csv";
+
+        // LocalStorage logic for saving items
+        function getSavedItems() {
+            return JSON.parse(localStorage.getItem('mySTEMTimeline')) || [];
+        }
+
+        function toggleSave(btn, title, deadline, category, link) {
+            let savedItems = getSavedItems();
+            const existsIndex = savedItems.findIndex(item => item.title === title);
+
+            if (existsIndex > -1) {
+                // Remove it
+                savedItems.splice(existsIndex, 1);
+                btn.innerHTML = `<i class="fa-regular fa-bookmark"></i> Save`;
+                btn.classList.remove('bg-emerald-100', 'text-emerald-700', 'border-emerald-200');
+                btn.classList.add('bg-slate-50', 'text-slate-600', 'border-slate-200', 'hover:bg-slate-100');
+            } else {
+                // Add it
+                savedItems.push({ title, deadline, category, link });
+                btn.innerHTML = `<i class="fa-solid fa-bookmark"></i> Saved`;
+                btn.classList.remove('bg-slate-50', 'text-slate-600', 'border-slate-200', 'hover:bg-slate-100');
+                btn.classList.add('bg-emerald-100', 'text-emerald-700', 'border-emerald-200');
+            }
+            
+            localStorage.setItem('mySTEMTimeline', JSON.stringify(savedItems));
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
             Papa.parse(sheetCSVUrl, {
@@ -143,17 +158,11 @@
                     const searchInput = document.getElementById('search-input');
 
                     loader.classList.add('hidden');
-                    
-                    if (data.length === 0) {
-                        grid.classList.remove('hidden');
-                        grid.innerHTML = `<div class="col-span-full text-center py-20 px-8 bg-white rounded-3xl border border-slate-100 shadow-sm"><div class="text-5xl mb-4">📭</div><p class="text-slate-900 font-bold text-lg mb-1">No live opportunities found right now.</p><p class="text-slate-500">Check back soon for new listings.</p></div>`;
-                        return;
-                    }
+                    if (data.length === 0) return;
 
                     grid.classList.remove('hidden');
                     filterContainer.classList.remove('hidden');
 
-                    // 1. DYNAMIC DROPDOWN: Extract categories and build options
                     const rawCategories = data.map(item => item.Category).filter(Boolean);
                     const uniqueCategories = [...new Set(rawCategories)].sort();
                     uniqueCategories.forEach(category => {
@@ -163,34 +172,40 @@
                         categoryDropdown.appendChild(option);
                     });
 
-                    // 2. DYNAMIC CARD GENERATION: Injecting the new premium card design
+                    const savedItems = getSavedItems();
+
                     data.forEach((item, index) => {
-                        if(!item.Title || item.Title.trim() === "") return; // Skip invalid entries
+                        if(!item.Title || item.Title.trim() === "") return;
 
                         const categorySafe = item.Category || 'STEM';
-                        const companySafe = item.Colour ? item.Colour.trim().toLowerCase() : 'emerald'; // Use color data from sheet
+                        const companySafe = item.Colour ? item.Colour.trim().toLowerCase() : 'emerald'; 
                         const firstLetter = item.Title.charAt(0).toUpperCase();
                         
-                        // Deadline Handling: Create nice badges and logic based on old data
                         let deadlineBadge = '';
                         let footerText = `<i class="fa-regular fa-calendar-days mr-1.5 text-slate-400"></i> Closes: ${item.Deadline || 'TBC'}`;
-                        
-                        // Default Status Badges (If 'Colour' column exists in sheet, we use that for coloring themeColor)
-                        let themeColor = companySafe; // E.g., 'blue', 'emerald', 'teal', 'red'
+                        let themeColor = companySafe; 
                         
                         if (item.Deadline && item.Deadline.toLowerCase() !== 'rolling') {
                             deadlineBadge = `<span class="bg-${themeColor}-50 text-${themeColor}-700 text-xs font-bold px-3 py-1 rounded-full border border-${themeColor}-100 uppercase tracking-wider">Active</span>`;
                         } else if (item.Deadline && item.Deadline.toLowerCase() === 'rolling') {
-                            themeColor = 'emerald'; // Override to emerald for rolling selection
+                            themeColor = 'emerald';
                             deadlineBadge = `<span class="bg-${themeColor}-50 text-${themeColor}-700 text-xs font-bold px-3 py-1 rounded-full border border-${themeColor}-100 uppercase tracking-wider"><i class="fa-solid fa-rotate-right mr-1.5 text-${themeColor}-400"></i>Rolling</span>`;
                             footerText = `<i class="fa-solid fa-hourglass-start mr-1.5 text-${themeColor}-400"></i>Open Selection`;
-                        } else {
-                            // No explicit deadline = Pre-register state
-                            themeColor = 'slate';
-                            deadlineBadge = `<span class="bg-slate-50 text-slate-600 text-xs font-bold px-3 py-1 rounded-full border border-slate-200uppercase tracking-wider">TBC</span>`;
                         }
 
-                        // THE NEW PREMIUM CARD HTML INJECTION
+                        // Check if this card is already saved by the user
+                        const isSaved = savedItems.some(saved => saved.title === item.Title);
+                        const btnClass = isSaved 
+                            ? "bg-emerald-100 text-emerald-700 border-emerald-200" 
+                            : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100";
+                        const btnIcon = isSaved ? `<i class="fa-solid fa-bookmark"></i> Saved` : `<i class="fa-regular fa-bookmark"></i> Save`;
+
+                        // Escaping quotes for the onClick function
+                        const safeTitle = item.Title.replace(/'/g, "\\'");
+                        const safeDeadline = item.Deadline ? item.Deadline.replace(/'/g, "\\'") : 'TBC';
+                        const safeCategory = categorySafe.replace(/'/g, "\\'");
+                        const safeLink = item.Link ? item.Link.replace(/'/g, "\\'") : '#';
+
                         const cardHTML = `
                             <div class="opp-card group animate-card-in bg-white rounded-3xl p-7 shadow-sm border border-slate-100/70 hover:shadow-2xl hover:border-emerald-100 hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full" 
                                  data-category="${categorySafe}" 
@@ -201,7 +216,12 @@
                                     <div class="w-16 h-16 bg-gradient-to-tr from-${themeColor}-600 to-${themeColor}-400 text-white rounded-2xl flex items-center justify-center text-3xl font-extrabold shadow-md border-4 border-white ring-1 ring-slate-100 shadow-${themeColor}-500/10">
                                         ${firstLetter}
                                     </div>
-                                    ${deadlineBadge}
+                                    <div class="flex flex-col items-end gap-2">
+                                        ${deadlineBadge}
+                                        <button onclick="toggleSave(this, '${safeTitle}', '${safeDeadline}', '${safeCategory}', '${safeLink}')" class="text-xs font-bold px-3 py-1.5 rounded-lg border transition-colors flex items-center gap-1.5 shadow-sm ${btnClass}">
+                                            ${btnIcon}
+                                        </button>
+                                    </div>
                                 </div>
                                 
                                 <div class="mb-6 flex-grow">
@@ -216,7 +236,7 @@
                                     </div>
                                     <a href="${item.Link || '#'}" target="_blank" rel="noopener noreferrer" 
                                        class="shrink-0 bg-slate-950 text-white px-5 py-3 rounded-xl text-sm font-bold flex items-center gap-2.5 hover:bg-${themeColor}-600 transition shadow-md shadow-slate-950/10">
-                                        View Details <i class="fa-solid fa-arrow-right text-xs"></i>
+                                        Details <i class="fa-solid fa-arrow-right text-xs"></i>
                                     </a>
                                 </div>
                             </div>
@@ -224,7 +244,6 @@
                         grid.insertAdjacentHTML('beforeend', cardHTML);
                     });
 
-                    // 3. LIVE FILTERING ENGINE: Instant searching and dropdown selection logic
                     function filterGrid() {
                         const searchValue = searchInput.value.toLowerCase().trim();
                         const categoryValue = categoryDropdown.value;
@@ -233,48 +252,28 @@
                         cards.forEach(card => {
                             const cardCategory = card.getAttribute('data-category');
                             const cardText = card.getAttribute('data-searchtext');
-                            
                             const matchesCategory = categoryValue === 'All' || cardCategory === categoryValue;
                             const matchesSearch = searchValue === "" || cardText.includes(searchValue);
-
-                            if (matchesCategory && matchesSearch) {
-                                card.classList.remove('hidden-card');
-                            } else {
-                                card.classList.add('hidden-card');
-                            }
+                            if (matchesCategory && matchesSearch) card.classList.remove('hidden-card');
+                            else card.classList.add('hidden-card');
                         });
                     }
 
-                    // Attach event listeners for real-time interaction
                     searchInput.addEventListener('input', filterGrid);
                     categoryDropdown.addEventListener('change', filterGrid);
-
-                },
-                error: function(error) {
-                    console.error("Error fetching PapaParse data:", error);
-                    document.getElementById('loading-state').classList.add('hidden');
-                    document.getElementById('error-state').classList.remove('hidden');
                 }
             });
         });
     </script>
-
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
-
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            }
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-xmark');
         });
     </script>
-
 </body>
 </html>
