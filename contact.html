@@ -47,41 +47,41 @@
         </div>
     </nav>
 
-    <main class="flex-grow max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm">
-            <div class="mb-8">
-                <h1 class="text-3xl font-black text-slate-900 tracking-tight">Get in Touch</h1>
-                <p class="text-slate-600 mt-2">Have a question about a STEM pathway, or want to partner with the hub? Drop us a message below.</p>
+  <main class="flex-grow max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="bg-white border border-slate-100 rounded-3xl p-8 shadow-sm">
+        <div class="mb-8">
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight">Get in Touch</h1>
+            <p class="text-slate-600 mt-2">Have a question about a STEM pathway, or want to partner with the hub? Drop us a message below.</p>
+        </div>
+
+        <form action="https://formspree.io/f/xzdqgzbv" method="POST" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Your Name</label>
+                    <input type="text" name="name" required placeholder="Alex" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+                    <input type="email" name="email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
+                </div>
             </div>
 
-            <form class="space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Your Name</label>
-                        <input type="text" required placeholder="Alex" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
-                        <input type="email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
-                    </div>
-                </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subject</label>
+                <input type="text" name="subject" required placeholder="Query regarding Degree Apprenticeships" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
+            </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subject</label>
-                    <input type="text" required placeholder="Query regarding Degree Apprenticeships" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
-                </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Message</label>
+                <textarea name="message" required rows="5" placeholder="Type your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition"></textarea>
+            </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Message</label>
-                    <textarea required rows="5" placeholder="Type your message here..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition"></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-paper-plane text-xs"></i> Send Message
-                </button>
-            </form>
-        </div>
-    </main>
+            <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paper-plane text-xs"></i> Send Message
+            </button>
+        </form>
+    </div>
+</main>
 
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
