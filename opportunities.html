@@ -6,6 +6,22 @@
     <title>Opportunities - Rural Wales STEM Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <style>
+        .loader {
+            border: 4px solid #f8fafc;
+            border-top: 4px solid #059669;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .hidden-card { display: none !important; }
+    </style>
 </head>
 <body class="bg-slate-50 min-h-screen flex flex-col font-sans text-slate-900">
 
@@ -37,7 +53,6 @@
                         <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
                     </button>
                 </div>
-                
             </div>
         </div>
 
@@ -54,113 +69,167 @@
 
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
-        <div class="mb-10 text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3">Live Opportunities</h1>
-            <p class="text-slate-600 max-w-2xl text-lg">Browse curated degree apprenticeships, corporate bursaries, and work experience tailored for ambitious students in Wales.</p>
+        <div class="mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+            <div class="max-w-2xl text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3">Live Opportunities</h1>
+                <p class="text-slate-600 text-lg">Browse curated apprenticeships, bursaries, and insight days dynamically loaded from our live database.</p>
+            </div>
+            <a href="suggest.html" class="shrink-0 bg-emerald-600 text-white px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-emerald-700 transition shadow-sm mx-auto md:mx-0">
+                <i class="fa-solid fa-lightbulb"></i> Suggest Opportunity
+            </a>
         </div>
 
-        <div class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm mb-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div id="filter-container" class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm mb-10 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="relative md:col-span-2">
                     <i class="fa-solid fa-search absolute left-4 top-3.5 text-slate-400"></i>
-                    <input type="text" placeholder="Search by role or company..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
+                    <input type="text" id="search-input" placeholder="Search by role, company, or keyword..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition">
                 </div>
                 <div>
-                    <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition text-slate-600 cursor-pointer">
-                        <option value="">All Sectors</option>
-                        <option value="engineering">Engineering & Manufacturing</option>
-                        <option value="software">Software & IT</option>
-                        <option value="energy">Renewable Energy</option>
-                    </select>
-                </div>
-                <div>
-                    <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition text-slate-600 cursor-pointer">
-                        <option value="">All Types</option>
-                        <option value="degree">Degree Apprenticeship</option>
-                        <option value="bursary">Bursary / Scholarship</option>
-                        <option value="experience">Work Experience</option>
-                    </select>
+                    <select id="category-filter" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 font-medium transition text-slate-600 cursor-pointer">
+                        <option value="All">All Categories</option>
+                        </select>
                 </div>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col h-full">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold border border-blue-100">
-                        GE
-                    </div>
-                    <span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border border-emerald-100">Open Now</span>
-                </div>
-                <div class="mb-4 flex-grow">
-                    <h3 class="text-xl font-bold text-slate-900 leading-tight mb-1">Aerospace Engineering Degree Apprenticeship</h3>
-                    <p class="text-slate-500 text-sm font-semibold mb-3">GE Aerospace • Cardiff / Nantgarw</p>
-                    <p class="text-slate-600 text-sm leading-relaxed">Study for a BEng in Aerospace Engineering fully funded while working on commercial aircraft engines. Starting salary £22,000.</p>
-                </div>
-                <div class="mt-auto border-t border-slate-100 pt-4 flex items-center justify-between">
-                    <div class="text-xs font-bold text-slate-500">
-                        <i class="fa-regular fa-clock mr-1"></i> Closes Nov 15
-                    </div>
-                    <a href="#" class="text-emerald-600 hover:text-emerald-700 font-bold text-sm flex items-center gap-1 transition">
-                        View Details <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col h-full">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center text-xl font-bold border border-slate-800">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <span class="bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1 rounded-full border border-amber-100">Closes Soon</span>
-                </div>
-                <div class="mb-4 flex-grow">
-                    <h3 class="text-xl font-bold text-slate-900 leading-tight mb-1">Software Developer Apprenticeship (Level 4)</h3>
-                    <p class="text-slate-500 text-sm font-semibold mb-3">Admiral Group • Newport / Remote</p>
-                    <p class="text-slate-600 text-sm leading-relaxed">Join the tech division building cloud infrastructure and customer platforms. No prior coding experience strictly required, just logical aptitude.</p>
-                </div>
-                <div class="mt-auto border-t border-slate-100 pt-4 flex items-center justify-between">
-                    <div class="text-xs font-bold text-red-500">
-                        <i class="fa-solid fa-circle-exclamation mr-1"></i> Closes Oct 31
-                    </div>
-                    <a href="#" class="text-emerald-600 hover:text-emerald-700 font-bold text-sm flex items-center gap-1 transition">
-                        View Details <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col h-full">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center text-xl font-bold border border-teal-100">
-                        <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full border border-slate-200">Pre-Register</span>
-                </div>
-                <div class="mb-4 flex-grow">
-                    <h3 class="text-xl font-bold text-slate-900 leading-tight mb-1">Renewable Energy University Bursary</h3>
-                    <p class="text-slate-500 text-sm font-semibold mb-3">RWE Renewables • Port Talbot Base</p>
-                    <p class="text-slate-600 text-sm leading-relaxed">A £3,000/year university bursary for students in Wales pursuing degrees in Electrical or Environmental Engineering, plus guaranteed summer placements.</p>
-                </div>
-                <div class="mt-auto border-t border-slate-100 pt-4 flex items-center justify-between">
-                    <div class="text-xs font-bold text-slate-500">
-                        <i class="fa-regular fa-calendar mr-1"></i> Opens Jan 2027
-                    </div>
-                    <a href="#" class="text-slate-400 cursor-not-allowed font-bold text-sm flex items-center gap-1">
-                        Coming Soon
-                    </a>
-                </div>
-            </div>
-
+        <div id="loading-state" class="flex flex-col items-center justify-center py-20">
+            <div class="loader mb-4"></div>
+            <p class="text-slate-500 font-bold uppercase tracking-widest text-sm">Syncing Database...</p>
         </div>
-        
-        <div class="mt-12 text-center">
-            <button class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-900 font-bold py-3 px-8 rounded-xl text-sm transition shadow-sm">
-                Load More Opportunities
-            </button>
+
+        <div id="error-state" class="hidden text-center py-20">
+            <div class="w-16 h-16 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <p class="text-slate-900 font-bold text-lg mb-1">Failed to connect to spreadsheet</p>
+            <p class="text-slate-500">Please check your Google Sheet link or try again later.</p>
         </div>
+
+        <div id="opportunities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden"></div>
 
     </main>
+
+    <script>
+        // Your existing Google Sheet link
+        const sheetCSVUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQSyvn7qSCsr734NAvG_1QTR1rP6Cb_WwJfE5UW1hXAEhG99a8LHygnKwAYaL2Q0EiOeUkGpdbZKWKN/pub?output=csv";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            Papa.parse(sheetCSVUrl, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    const data = results.data;
+                    const grid = document.getElementById('opportunities-grid');
+                    const filterContainer = document.getElementById('filter-container');
+                    const loader = document.getElementById('loading-state');
+                    const categoryDropdown = document.getElementById('category-filter');
+                    const searchInput = document.getElementById('search-input');
+
+                    loader.classList.add('hidden');
+                    
+                    if (data.length === 0) {
+                        grid.classList.remove('hidden');
+                        grid.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500 font-medium">No live opportunities found right now.</div>`;
+                        return;
+                    }
+
+                    grid.classList.remove('hidden');
+                    filterContainer.classList.remove('hidden');
+
+                    // 1. Build Category Dropdown Dynamically
+                    const categories = [...new Set(data.map(item => item.Category).filter(Boolean))];
+                    categories.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category;
+                        option.innerText = category;
+                        categoryDropdown.appendChild(option);
+                    });
+
+                    // 2. Build the New Professional Cards
+                    data.forEach(item => {
+                        if(!item.Title) return; 
+
+                        const categorySafe = item.Category || 'General';
+                        const firstLetter = item.Title.charAt(0).toUpperCase();
+                        
+                        // Handle Deadline Badges based on your old logic
+                        let deadlineBadge = '';
+                        let deadlineText = `<i class="fa-regular fa-clock mr-1"></i> ${item.Deadline || 'TBC'}`;
+                        
+                        if (item.Deadline && item.Deadline.toLowerCase() !== 'rolling') {
+                            deadlineBadge = `<span class="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border border-emerald-100">Live</span>`;
+                        } else if (item.Deadline && item.Deadline.toLowerCase() === 'rolling') {
+                            deadlineBadge = `<span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-full border border-blue-100"><i class="fa-solid fa-rotate mr-1"></i>Rolling</span>`;
+                            deadlineText = `Open Year-Round`;
+                        }
+
+                        // Inject card into grid (Search text hidden in data attributes for filtering)
+                        const cardHTML = `
+                            <div class="opp-card bg-white border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300 relative flex flex-col h-full" 
+                                 data-category="${categorySafe}" 
+                                 data-searchtext="${item.Title.toLowerCase()} ${item.Description.toLowerCase()}">
+                                
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center text-xl font-bold border border-slate-800 shadow-inner">
+                                        ${firstLetter}
+                                    </div>
+                                    ${deadlineBadge}
+                                </div>
+                                
+                                <div class="mb-4 flex-grow">
+                                    <h3 class="text-xl font-bold text-slate-900 leading-tight mb-1">${item.Title}</h3>
+                                    <p class="text-emerald-600 text-xs font-bold uppercase tracking-wider mb-3">${categorySafe}</p>
+                                    <p class="text-slate-600 text-sm leading-relaxed">${item.Description}</p>
+                                </div>
+                                
+                                <div class="mt-auto border-t border-slate-100 pt-4 flex items-center justify-between">
+                                    <div class="text-xs font-bold text-slate-500">
+                                        ${deadlineText}
+                                    </div>
+                                    <a href="${item.Link || '#'}" target="_blank" rel="noopener noreferrer" class="text-slate-900 hover:text-emerald-600 font-bold text-sm flex items-center gap-1 transition">
+                                        View <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        grid.insertAdjacentHTML('beforeend', cardHTML);
+                    });
+
+                    // 3. Live Filtering Logic (Runs as you type or select)
+                    function filterGrid() {
+                        const searchValue = searchInput.value.toLowerCase();
+                        const categoryValue = categoryDropdown.value;
+                        const cards = document.querySelectorAll('.opp-card');
+
+                        cards.forEach(card => {
+                            const cardCategory = card.getAttribute('data-category');
+                            const cardText = card.getAttribute('data-searchtext');
+                            
+                            const matchesCategory = categoryValue === 'All' || cardCategory === categoryValue;
+                            const matchesSearch = cardText.includes(searchValue);
+
+                            if (matchesCategory && matchesSearch) {
+                                card.classList.remove('hidden-card');
+                            } else {
+                                card.classList.add('hidden-card');
+                            }
+                        });
+                    }
+
+                    searchInput.addEventListener('input', filterGrid);
+                    categoryDropdown.addEventListener('change', filterGrid);
+
+                },
+                error: function(error) {
+                    console.error("Error fetching data:", error);
+                    document.getElementById('loading-state').classList.add('hidden');
+                    document.getElementById('error-state').classList.remove('hidden');
+                }
+            });
+        });
+    </script>
 
     <script>
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
