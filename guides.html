@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Guides - Rural Wales STEM Hub</title>
+    <title>Expert Guides - Rural Wales STEM Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         .tail-container { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen flex flex-col tail-container text-slate-900">
+<body class="bg-slate-50 min-h-screen flex flex-col tail-container text-slate-900 overflow-x-hidden">
 
     <nav class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm font-sans relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +19,7 @@
                 
                 <div class="flex items-center justify-start z-20">
                     <a href="index.html" class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2.5">
-                        <i class="fa-solid fa-atom text-emerald-600 animate-pulse"></i>
+                        <i class="fa-solid fa-atom text-emerald-600"></i>
                         <span class="whitespace-nowrap">Rural Wales <span class="text-emerald-600">STEM Hub</span></span>
                     </a>
                 </div>
@@ -43,7 +44,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-inner">
             <a href="index.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Home</a>
             <a href="opportunities.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Opportunities</a>
@@ -52,105 +53,75 @@
             <a href="guides.html" class="block px-4 py-3 rounded-xl text-base font-bold bg-emerald-50 text-emerald-700">Guides</a>
             <a href="suggest.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">Suggest</a>
             <a href="about.html" class="block px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:bg-slate-50">About</a>
-            <a href="contact.html" class="block px-4 py-3 rounded-xl text-base font-bold bg-slate-100 text-slate-900 mt-2 text-center">Contact Hub</a>
         </div>
     </nav>
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         
-        <div class="mb-12 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter mb-4">Application Strategy Hub</h1>
-            <p class="text-slate-600 text-lg md:text-xl font-medium max-w-3xl leading-relaxed">Finding the opportunity is only step one. Use our expert guides to build a standout CV, ace the interview, and secure your place.</p>
-        </div>
-
-        <div class="bg-slate-900 rounded-3xl p-8 md:p-12 mb-16 shadow-2xl relative overflow-hidden group">
-            <div class="absolute -right-20 -top-20 w-96 h-96 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none"></div>
-            
-            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div>
-                    <span class="inline-block bg-emerald-500 text-slate-900 text-xs font-extrabold px-3 py-1.5 rounded-lg uppercase tracking-wider mb-4">Featured Guide</span>
-                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4 leading-tight group-hover:text-emerald-400 transition-colors">The Ultimate Year 12 Work Experience Guide</h2>
-                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">Why securing a one-week placement could be the difference between a rejection and a £30,000 Degree Apprenticeship offer—and exactly how to find one in Wales.</p>
-                    <a href="#" class="inline-flex items-center justify-center bg-white text-slate-900 font-bold px-7 py-3.5 rounded-xl text-base hover:bg-slate-100 transition shadow-lg">
-                        Read the Full Guide <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-                <div class="hidden lg:flex justify-end">
-                    <div class="w-full max-w-md h-64 bg-slate-800 rounded-2xl border border-slate-700 shadow-inner flex items-center justify-center">
-                        <i class="fa-solid fa-briefcase text-6xl text-slate-600"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
-            <i class="fa-solid fa-layer-group text-slate-400 text-xl"></i>
-            <h3 class="text-2xl font-bold text-slate-900">Essential Reading</h3>
+        <div class="mb-16 text-center md:text-left border-b border-slate-200 pb-10" data-aos="fade-down">
+            <span class="text-emerald-600 font-bold tracking-wider uppercase text-sm mb-3 block">Mentorship Hub</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tighter mb-5">Curated Application Guides</h1>
+            <p class="text-slate-600 text-lg md:text-xl font-medium max-w-3xl leading-relaxed">We've scoured the web for the highest quality advice on CVs, interviews, and university applications. Master the process with these verified resources.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="bg-white border border-slate-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
-                <div class="mb-5 flex items-center justify-between">
-                    <span class="bg-blue-50 text-blue-700 text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">CV Writing</span>
-                    <i class="fa-regular fa-file-lines text-slate-300 text-xl"></i>
+
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-file-lines"></i>
                 </div>
-                <h4 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors">How to Write a CV with Zero Work Experience</h4>
-                <p class="text-slate-600 text-base mb-6 flex-grow">Don't panic if you haven't had a Saturday job. Learn how to turn your GCSE projects, UKMT scores, and hobbies into a professional corporate profile.</p>
-                <a href="#" class="inline-flex items-center font-bold text-slate-900 hover:text-blue-600 transition border-t border-slate-100 pt-4">
-                    Read Article <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">CVs & Resumes</span>
+                <h3 class="text-2xl font-black text-slate-900 mb-3 leading-tight">Writing a School Leaver CV</h3>
+                <p class="text-slate-600 mb-8 flex-grow text-sm leading-relaxed">No experience? No problem. Learn how to highlight your GCSEs, school projects, and soft skills to land your first STEM apprenticeship.</p>
+                <a href="https://successatschool.org/advicedetails/152/How-to-write-a-school-leaver-CV" target="_blank" class="w-full bg-slate-50 hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 font-bold py-3.5 rounded-xl text-center transition duration-300 flex items-center justify-center gap-2">
+                    Read on Success at School <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                 </a>
             </div>
 
-            <div class="bg-white border border-slate-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
-                <div class="mb-5 flex items-center justify-between">
-                    <span class="bg-purple-50 text-purple-700 text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">Pathways</span>
-                    <i class="fa-solid fa-scale-balanced text-slate-300 text-xl"></i>
-                </div>
-                <h4 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-purple-600 transition-colors">Degree Apprenticeships vs. Traditional University</h4>
-                <p class="text-slate-600 text-base mb-6 flex-grow">Breaking down the pros, cons, and financial realities. Is earning a salary while getting your degree paid for really as good as it sounds?</p>
-                <a href="#" class="inline-flex items-center font-bold text-slate-900 hover:text-purple-600 transition border-t border-slate-100 pt-4">
-                    Read Article <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="bg-white border border-slate-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
-                <div class="mb-5 flex items-center justify-between">
-                    <span class="bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">Interviews</span>
-                    <i class="fa-solid fa-users text-slate-300 text-xl"></i>
-                </div>
-                <h4 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-amber-600 transition-colors">Demystifying the Corporate Assessment Centre</h4>
-                <p class="text-slate-600 text-base mb-6 flex-grow">What actually happens when a company invites 20 teenagers into a room to solve a puzzle? How to stand out as a leader without being overbearing.</p>
-                <a href="#" class="inline-flex items-center font-bold text-slate-900 hover:text-amber-600 transition border-t border-slate-100 pt-4">
-                    Read Article <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="bg-white border border-slate-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full group">
-                <div class="mb-5 flex items-center justify-between">
-                    <span class="bg-rose-50 text-rose-700 text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">Research</span>
-                    <i class="fa-solid fa-microscope text-slate-300 text-xl"></i>
-                </div>
-                <h4 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-rose-600 transition-colors">Nuffield Research Placements Explained</h4>
-                <p class="text-slate-600 text-base mb-6 flex-grow">A step-by-step guide for Welsh students looking to secure these highly prestigious summer science placements before university.</p>
-                <a href="#" class="inline-flex items-center font-bold text-slate-900 hover:text-rose-600 transition border-t border-slate-100 pt-4">
-                    Read Article <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="bg-slate-50 border-2 border-slate-200 border-dashed rounded-3xl p-7 flex flex-col items-center justify-center text-center h-full min-h-[280px]">
-                <div class="w-12 h-12 bg-slate-200 text-slate-500 rounded-full flex items-center justify-center text-xl mb-4">
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                     <i class="fa-solid fa-pen-nib"></i>
                 </div>
-                <h4 class="text-lg font-bold text-slate-900 mb-2">More Guides Coming Soon</h4>
-                <p class="text-slate-500 text-sm">We are constantly writing new strategies and tips. Check back later for updates!</p>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">University Prep</span>
+                <h3 class="text-2xl font-black text-slate-900 mb-3 leading-tight">The Perfect STEM Personal Statement</h3>
+                <p class="text-slate-600 mb-8 flex-grow text-sm leading-relaxed">UCAS's official guide on what top-tier universities are looking for when you apply for Engineering, Maths, or Computer Science.</p>
+                <a href="https://www.ucas.com/undergraduate/applying-university/writing-personal-statement" target="_blank" class="w-full bg-slate-50 hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 font-bold py-3.5 rounded-xl text-center transition duration-300 flex items-center justify-center gap-2">
+                    Read on UCAS <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Interviews</span>
+                <h3 class="text-2xl font-black text-slate-900 mb-3 leading-tight">Nailing the Assessment Centre</h3>
+                <p class="text-slate-600 mb-8 flex-grow text-sm leading-relaxed">Applying for a corporate scheme? Learn how group tasks work, how to stand out, and what assessors are scoring you on.</p>
+                <a href="https://www.brightnetwork.co.uk/graduate-career-advice/assessment-centres/" target="_blank" class="w-full bg-slate-50 hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 font-bold py-3.5 rounded-xl text-center transition duration-300 flex items-center justify-center gap-2">
+                    Read on Bright Network <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Welsh Opportunities</span>
+                <h3 class="text-2xl font-black text-slate-900 mb-3 leading-tight">Apprenticeships in Wales</h3>
+                <p class="text-slate-600 mb-8 flex-grow text-sm leading-relaxed">The ultimate breakdown of Degree and Level 3 Apprenticeships available specifically to students living in Wales.</p>
+                <a href="https://careerswales.gov.wales/apprenticeships" target="_blank" class="w-full bg-slate-50 hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 font-bold py-3.5 rounded-xl text-center transition duration-300 flex items-center justify-center gap-2">
+                    Read on Careers Wales <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
             </div>
 
         </div>
-
     </main>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({ once: true, offset: 50 });
+
+        // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -166,6 +137,5 @@
             }
         });
     </script>
-
 </body>
 </html>
