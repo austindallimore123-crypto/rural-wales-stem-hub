@@ -64,7 +64,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
                 <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl mb-6">
                     <i class="fa-solid fa-triangle-exclamation"></i>
                 </div>
@@ -72,7 +72,7 @@
                 <p class="text-slate-600 leading-relaxed">Students in rural areas often miss out on incredible corporate apprenticeships, bursaries, and work experience simply because they don't know they exist. Career resources are scattered, and deadlines fly by unnoticed.</p>
             </div>
             
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition">
                 <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-6">
                     <i class="fa-solid fa-lightbulb"></i>
                 </div>
@@ -81,15 +81,33 @@
             </div>
         </div>
 
-        <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center gap-8 shadow-lg">
-            <div class="w-32 h-32 bg-slate-800 rounded-full flex-shrink-0 flex items-center justify-center border-4 border-slate-700 shadow-inner overflow-hidden">
-                <i class="fa-solid fa-user-astronaut text-5xl text-emerald-400"></i>
+        <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-lg relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-64 h-64 bg-emerald-500 rounded-full blur-3xl opacity-10 pointer-events-none"></div>
+
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-slate-800 rounded-full flex-shrink-0 flex items-center justify-center border-4 border-slate-700 shadow-inner overflow-hidden relative z-10">
+                <i class="fa-solid fa-user-tie text-5xl md:text-6xl text-emerald-400"></i>
             </div>
-            <div>
+            
+            <div class="text-center md:text-left flex-grow z-10">
                 <span class="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-2 block">The Developer</span>
-                <h3 class="text-3xl font-black mb-3">Built for the Community.</h3>
-                <p class="text-slate-300 mb-6 leading-relaxed">This project was developed to directly address the lack of centralized career resources in our local area. It serves as both a community tool and a technical portfolio piece demonstrating full-stack architecture, responsive UI design, and data management.</p>
-                <a href="contact.html" class="inline-flex bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-6 py-3 rounded-xl text-sm transition shadow-sm">Get in Touch</a>
+                <h3 class="text-3xl font-black mb-1">Hi, I'm [Your Name]</h3>
+                <p class="text-slate-400 font-medium mb-4 text-sm md:text-base">Student & Developer based in Wales</p>
+                
+                <p class="text-slate-300 mb-6 leading-relaxed max-w-2xl text-sm md:text-base">
+                    I built the Rural Wales STEM Hub because I noticed a massive gap in how career opportunities are communicated to students outside of major cities. I wanted to use my technical skills to create something that doesn't just look good on a portfolio, but actually helps my peers land life-changing apprenticeships and university spots.
+                </p>
+                
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="flex items-center gap-2 bg-[#0A66C2] hover:bg-[#004182] text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition shadow-sm">
+                        <i class="fa-brands fa-linkedin text-lg"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/your-username" target="_blank" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 font-semibold px-5 py-2.5 rounded-xl text-sm transition shadow-sm">
+                        <i class="fa-brands fa-github text-lg"></i> GitHub
+                    </a>
+                    <a href="mailto:your.email@example.com" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-slate-600 font-semibold px-5 py-2.5 rounded-xl text-sm transition shadow-sm">
+                        <i class="fa-solid fa-envelope text-lg"></i> Email
+                    </a>
+                </div>
             </div>
         </div>
 
